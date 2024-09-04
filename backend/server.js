@@ -46,7 +46,7 @@ app.get("/allProducts", async (req, res) => {
 	try {
 		const allProducts = await Product.find();
 		if (!allProducts) {
-			return res.json({ message: "No Products found" });
+			return res.status(404).json({ message: "No Products found" });
 		} else {
 			res.json({ products: allProducts });
 		}
@@ -62,18 +62,18 @@ app.get("/allProducts", async (req, res) => {
 app.get("/productById", async (req, res) => {
 	const { id } = req.body;
 	if (!id) {
-		return res.json({ message: "ID is required" });
+		return res.status(404).json({ message: "ID is required" });
 	}
 	try {
 		const product = await Product.findById(id);
 		if (!product) {
-			return res.json({ message: "Product not found" });
+			return res.status(404).json({ message: "Product not found" });
 		} else {
 			res.json({ product: product });
 		}
 	} catch (error) {
 		console.error(error);
-		res.json({ error: 'Something went wrong' });
+		res.json({ message: 'Something went wrong' });
 	}
 });
 

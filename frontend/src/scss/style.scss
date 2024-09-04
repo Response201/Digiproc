@@ -3,7 +3,8 @@
 @use "_navbar";
 @use "_notFoundPage";
 @use "_homePage";
-
+@use "_card";
+@use "_rating";
 html,
 body {
     height: 100%;
@@ -44,7 +45,7 @@ header {
 }
 
 main {
-    padding: 5rem 1rem 1rem 1rem;
+    padding: 5rem 1.5rem 1rem 1.5rem;
     height: 100%;
     width: 100%;
  max-width: v.$max-width-app;

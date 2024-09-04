@@ -19,3 +19,18 @@
     @content;
   }
 }
+
+
+
+
+
+@mixin text() {
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -2,2%;
+  @content;
+
+
+}

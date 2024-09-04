@@ -10,9 +10,9 @@ const seedProducts = async () => {
   try {
   
     const products = [
-      { name: "Saving & Cost avoidance", image: "https://i.postimg.cc/brhN8SN6/Product1.jpg", primaryColor: "#dc8409", price: 100, rating: 4 },
-      { name: "Code of Conduct", image: "https://i.postimg.cc/DwMv0Mw4/Product2.jpg", primaryColor: "#1a364c", price: 150, rating: 4 },
-      { name: "ESG measurement", image: "https://i.postimg.cc/Kznx9crt/Product3.jpg", primaryColor: "#009760", price: 200, rating: 4 },
+      { name: "Saving & Cost avoidance", image: "https://svgshare.com/i/1A2T.svg", primaryColor: "#dc8409", price: 90000, rating: 4 },
+      { name: "Code of Conduct", image: "https://svgshare.com/i/1A30.svg", primaryColor: "#1a364c", price: 90000, rating: 4 },
+      { name: "ESG measurement", image: "https://svgshare.com/i/1A1v.svg", primaryColor: "#009760", price: 90000, rating: 4 },
     ];
 
     for (const product of products) {
@@ -28,8 +28,8 @@ const seedProducts = async () => {
   } catch (err) {
     
     console.error("Error seeding products:", err);
-  }
-};
+  } 
+};  
 
 
 
