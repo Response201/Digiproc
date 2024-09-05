@@ -1,45 +1,30 @@
 @use "variables" as v;
-
 @mixin devices($breakpoint) {
-  @if $breakpoint == tablet {
+  @if $breakpoint ==tablet {
     @media (min-width: 768px) {
       @content;
     }
   }
-
-  @if $breakpoint == desktop {
+  @if $breakpoint ==desktop {
     @media (min-width: 1024px) {
       @content;
     }
   }
 }
-
 @mixin respond($screen-size) {
   @media only screen and (max-width: $screen-size) {
     @content;
   }
 }
-
-
-
-
-
 @mixin text() {
   font-weight: 700;
   font-family: "Inter", sans-serif;
   font-style: normal;
   line-height: 150%;
-  letter-spacing: -2,2%;
-
-
+  letter-spacing: -2, 2%;
   font-size: clamp(20px, 5vw, 30px);
   @media (min-width: 768px) {
     font-size: clamp(12px, 2vw, 24px);
-    
   }
-      
   @content;
-
-
 }
-

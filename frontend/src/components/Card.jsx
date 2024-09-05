@@ -6,8 +6,6 @@ export const Card = ({ element }) => {
   const { addToCart } = useCartHook();
 
 
-
-
   return (
     <article className="cardItem">
       <section className="imagePriceContainer">

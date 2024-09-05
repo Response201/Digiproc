@@ -1,29 +1,31 @@
 @use "variables" as v;
 
-.navba, nav{
+.navba,
+nav {
     width: 100%;
     max-width: v.$max-width-app !important;
-    background-color:  v.$primary-bg !important;
+    background-color: v.$primary-bg !important;
 }
 
 .dropdown-menu-end {
-  box-sizing: 0 0 5px  v.$shadow !important;
+    box-sizing: 0 0 5px v.$shadow !important;
     border: 1px solid v.$shadow !important;
     margin-top: 0.65rem !important;
-    background-color:  v.$primary-bg !important;
-
+    background-color: v.$primary-bg !important;
 }
-#cartDropdown{
-    background-color:  v.$primary-bg !important;
-border: none;
+
+#cartDropdown {
+    background-color: v.$primary-bg !important;
+    border: none;
 }
 
 .dropdown-item {
-    span{
+    span {
         margin-right: 0.7rem;
     }
+
     p {
-        padding: 0.3rem 0 0 0.5rem  ;
+        padding: 0.3rem 0 0 0.5rem;
         margin: 0;
     }
 
@@ -37,7 +39,6 @@ border: none;
     &:hover {
         cursor: pointer;
     }
-
 }
 
 .navText {
@@ -46,6 +47,7 @@ border: none;
 
 .binIcon {
     color: v.$primary-color !important;
+
     &:hover {
         color: v.$secondary-color !important;
     }

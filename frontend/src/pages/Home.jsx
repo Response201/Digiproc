@@ -9,7 +9,9 @@ export const Home = () => {
   /* useFetch():
     Needs URL and HTTP method (can include body details if needed).
     Returns data, isLoading boolean, and error message. */
-  const [url, setUrl] = useState("http://localhost:27017/allProducts");
+   
+
+  const [url, setUrl] = useState(import.meta.env.VITE_URL_PRODUCTS);
   const { data, isLoading, error } = useFetch(url, "GET");
  let Loading = true;
 

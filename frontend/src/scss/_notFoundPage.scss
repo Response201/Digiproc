@@ -1,19 +1,21 @@
 @use "variables" as v;
-.notFoundContainer{
 
-height: 100vh;
-min-height: 500px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color:  v.$primary-bg;
+.notFoundContainer {
 
-p{
-padding: 1rem 0;
- img{
-    padding-left: 0.5rem;
- }
+   height: 100vh;
+   min-height: 500px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: v.$primary-bg;
 
-}
+   p {
+      padding: 1rem 0;
+
+      img {
+         padding-left: 0.5rem;
+      }
+
+   }
 }

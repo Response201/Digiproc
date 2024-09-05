@@ -14,6 +14,8 @@ export const RatingComponent = ({ id, inRating }) => {
 
   useFetch(url, "PUT", body);
 
+
+
   /* Function to update the hovered star, when mouse is over a star */
   const handleMouseOver = (i) => {
     let newRatings = i + 1;
@@ -32,8 +34,10 @@ export const RatingComponent = ({ id, inRating }) => {
     let newRatings = i + 1;
     setRating(newRatings);
     setBody({ "id": `${id}`, "newRating": newRatings });
-    setUrl("http://localhost:27017/updateRating");
+    setUrl(import.meta.env.VITE_URL_RATING);
   };
+
+
 
   /* Generate an array of star elements */
   const stars = [];

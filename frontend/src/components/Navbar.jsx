@@ -10,7 +10,6 @@ import { useGlobalContext } from '../context/GlobalContext';
 import { useCartHook } from '../hook/useCartHook';
 
 
-
 export const Navbar = () => {
 
   const { deleteFromCart } = useCartHook();

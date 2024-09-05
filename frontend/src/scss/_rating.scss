@@ -25,13 +25,8 @@
 
         @include mixins.devices(tablet) {
             font-size: clamp(11px, 2vw, 21px);
-
-
         }
     }
-
-
-
 
     p {
         margin: 0.5rem 0;
@@ -40,17 +35,12 @@
         @include mixins.text() {
             font-weight: 400;
         }
+
         color: v.$card-dark-text-color;
         font-size: clamp(16px, 5vw, 24px);
 
         @include mixins.devices(tablet) {
             font-size: clamp(9.6px, 2vw, 19px);
-
-
         }
     }
-
-
-
-
 }

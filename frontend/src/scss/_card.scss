@@ -1,6 +1,5 @@
 @use "mixins";
 @use "variables" as v;
-
 .gridContainer___Card {
     display: grid;
     grid-template-columns: 100%;
@@ -11,16 +10,12 @@
     height: fit-content;
     min-height: 95%;
     padding-bottom: 1rem;
-
     @include mixins.devices(tablet) {
         padding-bottom: 0.8rem;
         grid-template-columns: 30% 30% 30%;
         justify-content: space-between;
     }
-
 }
-
-
 .cardItem {
     background-color: v.$primary-card-color;
     box-shadow: 0px 60px 80px v.$card-shadow ;
@@ -31,15 +26,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     .cardContent {
         height: 50%;
         width: 100%;
         padding: 3.5%;
-
-
         h1 {
-         
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -47,17 +38,8 @@
             text-align: center;
             padding: 5px 0;
             /* mixin for text - font-weight font-family font-size font-style line-height letter-spacing:*/
-            @include mixins.text(){  }
-           
-
-
-
-
+            @include mixins.text() {}
         }
-
-
-
-
         .addToCartBtn {
             outline: none;
             border: 0;
@@ -65,38 +47,28 @@
             height: 4rem;
             border-radius: 9px;
             color: v.$primary-bg;
-
             /* mixin for text - font-weight font-family font-size font-style line-height letter-spacing:*/
-            @include mixins.text(){ font-weight: 700; }
-
-
-
+            @include mixins.text() {
+                font-weight: 700;
+            }
             font-size: clamp(16px, 5vw, 24px);
-
-
             &:hover {
                 filter: brightness(80%);
             }
-
             @include mixins.devices(tablet) {
                 height: clamp(3rem, 5vw, 4rem);
                 font-size: clamp(9.6px, 2vw, 18px);
             }
         }
-
-
     }
-
     .imagePriceContainer {
         position: relative;
         height: fit-content;
         width: 100%;
-
         img {
             width: 100%;
             object-fit: contain;
         }
-
         p {
             color: #1A364C;
             position: absolute;
@@ -105,20 +77,11 @@
             background-color: #FFFFFF;
             padding: 1.5% 5%;
             border-radius: 30px;
-        
             /* mixin for text - font-weight font-family font-size font-style line-height letter-spacing:*/
-            @include mixins.text(){  }
-
+            @include mixins.text() {}
             @include mixins.devices(tablet) {
-              
                 border-radius: clamp(25px, 2vw, 30px);
             }
-
         }
-
-
     }
-
-
-
 }
