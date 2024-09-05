@@ -9,6 +9,22 @@
     justify-content: center;
     align-items: center;
 
+    .stars {
+        display: flex;
+    }
+
+    .star {
+
+        margin: 0 2px;
+        color: #F7B559;
+
+        &:hover {
+            color: #f69611;
+        }
+    }
+
+
+
     p {
 
         /* mixin for text - font-weight font-family font-style line-height letter-spacing:*/

@@ -10,15 +10,21 @@ export const useCartHook = () => {
   /* Update cart count and cart total price when cart items change, and save the updated cart to localStorage */
   useEffect(() => {
     setCartCount(cart.length);
-    let startPrice = 0;
-    cart.forEach(element => {
-      startPrice += element.quantity * element.price;
-    });
-    setCartTotalPrice(startPrice);
+    setTotalPrice()
     localStorage.setItem("localCart", JSON.stringify(cart));
   }, [cart, setCart]);
 
 
+  /* total price function */
+  const setTotalPrice = () => {
+    let startPrice = 0;
+
+    cart.forEach(element => {
+      startPrice += element.quantity * element.price;
+    });
+    
+    setCartTotalPrice(startPrice);
+  }
 
 
   // Function to add or update items in the cart

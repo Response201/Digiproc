@@ -44,35 +44,55 @@ app.get("/", (req, res) => {
 /* Route to get all products */
 app.get("/allProducts", async (req, res) => {
 	try {
+
 		const allProducts = await Product.find();
+
+		/* if no products are found, respond with a 404 error */
 		if (!allProducts) {
 			return res.status(404).json({ message: "No Products found" });
 		} else {
+			/*  respond with the list of all products */
 			res.json({ products: allProducts });
 		}
 	} catch (error) {
-		console.error(error);
+	
 		res.json({ error: 'Something went wrong' });
 	}
 });
 
 
 
-/* Route to get a product by ID */
-app.get("/productById", async (req, res) => {
-	const { id } = req.body;
-	if (!id) {
-		return res.status(404).json({ message: "ID is required" });
+/* Route to update rating */
+app.put("/updateRating", async (req, res) => {
+	const { id, newRating } = req.body;
+	
+	/* Check if 'id' or 'newRating' are provided */
+	if (!id || !newRating) {
+	
+		return res.status(404).json({ message: "Something went wrong" });
 	}
+	
 	try {
-		const product = await Product.findById(id);
+		/* find the product by its _id and update its rating */
+		const product = await Product.findByIdAndUpdate(id, { rating: +newRating }, { new: true });
+		
+		/* if the product was not found, respond with a 404 error */
 		if (!product) {
 			return res.status(404).json({ message: "Product not found" });
 		} else {
-			res.json({ product: product });
+			/* if the product was found and updated, retrieve all products */
+			const allProducts = await Product.find();
+			
+			/* if no products are found, respond with a 404 error */
+			if (!allProducts) {
+				return res.status(404).json({ message: "No Products found" });
+			} else {
+				/*  respond with the list of all products */
+				res.json({ products: allProducts });
+			}
 		}
 	} catch (error) {
-		console.error(error);
+		
 		res.json({ message: 'Something went wrong' });
 	}
 });

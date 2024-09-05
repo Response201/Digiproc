@@ -20,7 +20,7 @@ export const Card = ({ element }) => {
         <h1 style={{ color: element.primaryColor }}>{element.name}</h1>
 
         {/* Rating-component */}
-        <RatingComponent rating={element.rating} />
+        <RatingComponent inRating={element.rating} id={element._id} />
 
         <button
           className='addToCartBtn'

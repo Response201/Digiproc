@@ -14,10 +14,10 @@ export const useFetch = (url, inputMethod, bodyInput) => {
         /* Configure fetch options - method and body if provided */
         const options = {
             method: inputMethod,
-           if(bodyInput){
-            body: JSON.stringify({
-                bodyInput
-            })}
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: bodyInput ? JSON.stringify(bodyInput) : null,
           };
 
       try {
