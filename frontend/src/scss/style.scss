@@ -10,12 +10,14 @@ body {
     height: 100%;
     margin: 0;
     background-color:  v.$primary-bg;
+    
 }
 
 body {
     min-height: 500px;
     background-color:  v.$primary-bg;
     color: v.$primary-color;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -48,7 +50,7 @@ main {
     padding: 5rem 1.5rem 1rem 1.5rem;
     height: 100%;
     width: 100%;
- max-width: v.$max-width-app;
- background-color:  v.$primary-bg;
+    max-width: v.$max-width-app;
+    background-color:  v.$primary-bg;
 }
 

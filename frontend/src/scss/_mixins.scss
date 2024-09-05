@@ -30,7 +30,16 @@
   font-style: normal;
   line-height: 150%;
   letter-spacing: -2,2%;
+
+
+  font-size: clamp(20px, 5vw, 30px);
+  @media (min-width: 768px) {
+    font-size: clamp(12px, 2vw, 24px);
+    
+  }
+      
   @content;
 
 
 }
+

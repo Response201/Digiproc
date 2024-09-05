@@ -7,6 +7,8 @@ export const useFetch = (url, inputMethod, bodyInput) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+if(url){
+
     const fetchData = async () => {
         /* Set loading to true when starting the fetch request */
         setIsLoading(true);
@@ -47,7 +49,7 @@ export const useFetch = (url, inputMethod, bodyInput) => {
       }
     };
 
-    fetchData();
+    fetchData();}
   }, [url]);
 
  /*  Return the data, loading status, and error for use in components */
