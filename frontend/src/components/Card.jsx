@@ -1,31 +1,35 @@
-import React from 'react'
-import { RatingComponent } from './RatingComponent'
+import React from 'react';
+import { RatingComponent } from './RatingComponent';
+import { useCartHook } from '../hook/useCartHook';
 
-export const Card = ({element}) => {
+export const Card = ({ element }) => {
+  const { addToCart } = useCartHook();
+
+
+
+
   return (
-    <article key={element._id} className="cardItem">
-              <section className="imagePriceContainer">
-                <img src={element.image} alt={element.name} />
+    <article className="cardItem">
+      <section className="imagePriceContainer">
+        <img src={element.image} alt={element.name} />
                 {/* Display price in SEK with two decimal places */}
                 <p>{element.price.toString().slice('0', '2')} {element.price.toString().slice('2')} SEK</p>
-              </section>
-<secttion className="cardContent">
- {/* dynamic color from element.primaryColor */} 
-<h1 style={{color:element.primaryColor}}> {element.name} </h1>
-  
-{/* Rating-component */}
-<RatingComponent rating={element.rating} />
+      </section>
+      <section className="cardContent">
+   
+        <h1 style={{ color: element.primaryColor }}>{element.name}</h1>
 
- {/* dynamic color from element.primaryColor */} 
-<button className='addToCartBtn' style={{backgroundColor:element.primaryColor}}>
+        {/* Rating-component */}
+        <RatingComponent rating={element.rating} />
 
-ADD TO CART
-</button>
-
-
-</secttion>
-
-            </article>
-  )
-}
- 
+        <button
+          className='addToCartBtn'
+          style={{ backgroundColor: element.primaryColor }}
+          onClick={() => addToCart(element)}
+        >
+          ADD TO CART
+        </button>
+      </section>
+    </article>
+  );
+};

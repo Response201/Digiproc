@@ -28,7 +28,7 @@ export const Home = () => {
       {data && data.products && data.products.length >= 1 && (
         <section className="gridContainer___Card">
           {data.products.map((element) => (
-            <Card element={element} />
+            <Card element={element} key={element._id} />
           ))}
         </section>
       )}
