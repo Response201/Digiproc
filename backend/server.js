@@ -25,7 +25,7 @@ mongoose.connect(mongoUrl, {
 	.catch(err => {
 		console.error("MongoDB connection error:", err);
 	});
-const port = 27017;
+	const port = process.env.PORT || 3000; 
 
 
 /*  Middleware setup - cors and json */
